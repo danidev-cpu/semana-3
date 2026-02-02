@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Angular Events</a>
+  </div>
+</nav>
+<div class="container mt-4">
+  <h1>Eventos</h1>
+  <input type="text" class="form-control mb-3" [(ngModel)]="filtro" placeholder="Filtrar por nombre">
+  <app-evento-add (addEvento)="addEvento($event)"></app-evento-add>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let evento of eventos | filter: filtro">
+      <app-evento-item [evento]="evento" (delete)="deleteEvento(evento)"></app-evento-item>
+    </div>
+  </div>
+</div>
+
+<router-outlet />

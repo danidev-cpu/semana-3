@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="evento.nombre" name="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" id="descripcion" [(ngModel)]="evento.descripcion" name="descripcion"
+            required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen</label>
+        <input type="file" class="form-control" id="imagen" (change)="onFileSelected($event)" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Añadir Evento</button>
+</form>
